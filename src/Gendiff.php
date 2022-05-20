@@ -4,27 +4,23 @@ namespace App\Gendiff;
 
 use Docopt;
 
-function test()
-{
-    var_dump('123123');
-}
-
 //require __DIR__ . '/../src/docopt.php';
 function start()
 {
-    $doc = <<<'DOCOPT'
-Example of program which uses [options] shortcut in pattern.
+$doc = <<<'DOCOPT'
+Generate diff
+
 
 Usage:
-  any_options_example.py [options] <port>
+  gendiff (-h|--help)
+  gendiff (-v|--version)
+  gendiff [--format <fmt>] <firstFile> <secondFile>
 
 Options:
   -h --help                show this help message and exit
-  --version                show version and exit
-  -n, --number N           use N as a number
-  -t, --timeout TIMEOUT    set timeout TIMEOUT seconds
-  --apply                  apply changes to database
-  -q                       operate in quiet mode
+  -v --version                show version and exit
+  --format <fmt>                Report format [default: stylish]
+
 
 DOCOPT;
 
